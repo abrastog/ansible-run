@@ -1,0 +1,6 @@
+---
+ - hosts: "{{hosts}}"
+   sudo:  yes 
+   tasks: 
+      - name: httpd  is installed
+        yum: name=httpd state=present

@@ -1,0 +1,9 @@
+---
+- hosts: "{{hosts}}"
+  become: true
+  tasks:
+    - name:   check the ping  
+      ping:
+    
+    - name: make sure telnet will be install
+      yum:  name=telnet state=present update_cache=true

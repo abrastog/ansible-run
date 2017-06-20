@@ -1,0 +1,31 @@
+---
+#- name: Add the elasticsearch yum  repository key
+#  yum_key: url=rpm --import http://packages.elastic.co/GPG-KEY-elasticsearch state=present
+
+#- name: Add the logstash yum repository
+#  yum_repository: repo=http://packages.elastic.co/elasticsearch/2.x/centos  state=present
+
+- name: copy the repofile on remote server
+  copy: src=/home/elasticsearch.repo dest=/etc/yum.repos.d/elasticsearch.repo owner=test  group=test mode=0664
+
+- name: Install elasticsearch
+  yum: name={{item}} state=present update_cache=yes
+  with_items:
+  - elasticsearch
+
+#- name: Set logstash to start up by default
+#  shell: sudo update-rc.d logstash defaults 95 10
+#  changed_when: false
+
+
+- name: reload systemctl daemon
+  shell: "systemctl daemon-reload"
+
+- name: enable elastic serach on boot
+  shell: "chkconfig elasticsearch on"
+
+- name: start elastic search service
+  shell: "/etc/init.d/elasticsearch restart"
+
+#- name: Restart elasticsearch
+#  service: name=elasticsearch state=restarted

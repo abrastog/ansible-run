@@ -1,0 +1,25 @@
+---
+
+- name: install wget on server
+  yum:  name=wget state=present update_cache=yes
+ 
+- name: creating directory to install java on server
+  file: path=/opt/java  state=directory mode=777 
+
+- copy:  
+   src: /tmp/jdk-8u131-linux-x64.rpm
+   dest:/opt/java
+
+
+- command: "{{ item }}"
+  args:
+    chdir: "/opt/java"
+  with_items:
+     - rpm -ivh jdk-8u131-linux-x64.rpm
+
+ 
+#- name: install rpm
+#  become: yes
+#  command: rpm -Uvh jdk-8u131-linux-x64.rpm
+  
+

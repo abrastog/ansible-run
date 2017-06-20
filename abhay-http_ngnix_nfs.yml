@@ -1,0 +1,14 @@
+---
+- hosts: "{{hosts}}"
+  become: yes
+  tasks:
+   -  name:  check the ping,server should be comnnected
+      ping:
+ 
+   -  name: install multiple things
+      yum:  name={{item}}  state=removed  update_cache=yes
+      with_items:
+         - httpd
+         - nfs*
+         - telnet
+      
