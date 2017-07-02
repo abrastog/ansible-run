@@ -20,5 +20,15 @@ mongo-server
 perl-server
 #192.168.33.14
 
-[asg-group]
+#test6,7,8
 
+[elasticsearch]
+
+elasticsearch1
+#192.168.33.14
+
+elasticsearch2
+#192.168.33.16
+
+elasticsearch
+#192.168.33.18
