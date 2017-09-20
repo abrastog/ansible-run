@@ -1,0 +1,9 @@
+---
+- name: Install php extensions
+  sudo: yes
+  yum: name=php  state=present update_cache=yes
+#  sudo: yes
+#  with_items:
+#    - php* 
+    
+

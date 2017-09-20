@@ -1,0 +1,8 @@
+---
+- hosts: "{{hosts}}"
+  become: true
+  tasks:
+    -  name: verify that the es-version is not already installed
+       stat: "path=/usr/local/{{es_install_version}}"
+       register: es_install_dir
+ 

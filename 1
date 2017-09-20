@@ -1,0 +1,6 @@
+---
+- hosts: "{hosts}"
+  become: true
+  tasks:
+   - name:  install java 
+     yum:   name=java *  update_cache=present  state=present  

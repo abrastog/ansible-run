@@ -1,7 +1,10 @@
 ---
 - hosts: "{{hosts}}"
-  become: yes
+  sudo:    yes
   roles: 
-  - abhay-elasticsearch 
+   - abhay-installjava 
+   - abhay-elasticsearch 
+
+
    
 

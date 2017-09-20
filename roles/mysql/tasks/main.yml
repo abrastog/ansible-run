@@ -1,0 +1,10 @@
+---
+- name: Create mysql database
+  mysql_db: name=spgrl state=present
+
+- name: Create mysql user
+  mysql_user: 
+    name=root 
+    password=redhat123
+    priv=*.*:ALL
+

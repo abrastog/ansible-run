@@ -1,0 +1,27 @@
+---
+#- name: Update yum  cache
+#  yum: update_cache=yes 
+#  sudo: yes
+
+#- name: Install required software
+#  yum: name={{ item }} state=present update_cache=yes
+#  sudo: yes
+#  with_items:
+#    - http*
+#    - mysql-server*
+#    - php*
+#    - python*
+
+
+
+-  name:  check the ping,server should be comnnected
+   action: ping
+
+-  name: install multiple things
+   yum:  name={{item}}  state=removed  update_cache=yes
+   with_items:
+         - httpd
+         - mysql-server
+         - php*
+         - libapache2-mod-php5
+

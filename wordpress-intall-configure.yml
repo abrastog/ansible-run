@@ -1,0 +1,12 @@
+---
+- hosts: "{{hosts}}"
+  become: yes
+- include: abhay-mysqlrepo.yml 
+
+- hosts: "{{hosts}}"
+  become: yes 
+  roles:
+   - php
+   - server
+   - mysql
+ #  - wordpress

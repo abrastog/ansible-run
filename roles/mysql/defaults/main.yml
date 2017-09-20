@@ -1,0 +1,5 @@
+---
+wp_mysql_db: sprgrl
+wp_mysql_user: abhay
+wp_mysql_password: redhat
+

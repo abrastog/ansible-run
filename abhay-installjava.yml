@@ -1,0 +1,6 @@
+---
+- hosts: "{{hosts}}"
+  become: yes
+  roles:
+   - abhay-installjava
+   

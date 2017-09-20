@@ -1,0 +1,7 @@
+---
+- hosts: "{{hosts}}"
+  become: yes
+  tasks:
+     -  name: copy the repofile on remote server
+        copy: src=/home/test/ansible-run/mysql.repo dest=/etc/yum.repo.d/ owner=test  group=test mode=0664
+   

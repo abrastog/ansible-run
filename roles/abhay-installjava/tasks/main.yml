@@ -1,0 +1,5 @@
+---
+
+- name: inatall the java
+  yum:  name=java*  state=present  update_cache=true 
+
