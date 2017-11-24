@@ -1,0 +1,9 @@
+---
+ - hosts: localhost
+   connection: local
+   gather_facts: false
+   user: test
+   pre_tasks:
+    - include_vars: ec2_vars/webservers.yml
+   roles:
+    - provision-ec2
