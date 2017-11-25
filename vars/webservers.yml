@@ -1,6 +1,6 @@
 ec2_keypair: "abhaytest.pem"
 ec2_security_group: "launch-wizard-9"
-ec2_instance_type: "{{instance_type|default('t2.micro')}}"
+ec2_instance_type: "t2.micro"
 ec2_image: "ami-e41b618b"
 ec2_subnet_ids: "subnet-6e255b07"
 ec2_region: "ap-south-1a"
