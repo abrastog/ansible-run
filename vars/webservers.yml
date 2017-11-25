@@ -8,3 +8,4 @@ ec2_tag_Name: "abhay-ansible"
 ec2_tag_Type: "Abhay"
 ec2_tag_Environment: ['production','nqa']
 ec2_volume_size: 10
+ec2_count: ['1','2','3']
