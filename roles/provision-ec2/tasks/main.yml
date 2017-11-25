@@ -6,9 +6,9 @@
      group_id: "{{ ec2_security_group }}"
      instance_type: "{{ ec2_instance_type|random }}"
      image: "{{ ec2_image }}"
-     vpc_subnet_id: "{{ ec2_subnet_ids|random }}"
+     vpc_subnet_id: "{{ ec2_subnet_ids }}"
      region: "{{ ec2_region }}"
-     instance_tags: '{"Name":"{{ec2_tag_Name}}","Type":"{{ec2_tag_Type}}","Environment":"{{ec2_tag_Environment|random }}"}'
+     instance_tags: '{"Name":"{{ec2_tag_Name}}","Type":"{{ec2_tag_Type}}","Environment":"{{ec2_tag_Environment}}"}'
      assign_public_ip: yes
      wait: true
      count: "{{ ec2_count }}"
