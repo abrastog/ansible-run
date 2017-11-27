@@ -22,5 +22,3 @@
        delete_on_termination: true
    register: ec2
 
- - name: Wait for the instances to boot by checking the ssh port
-   wait_for: host={{item.public_dns_name}} port=22 delay=60 timeout=320 state=started

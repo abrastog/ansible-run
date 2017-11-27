@@ -3,7 +3,7 @@
   become: yes
   tasks:
    - name: "Reboot if required"
-     shell: sleep 2 && shutdown -r now 'Reboot required' removes=/var/run/reboot-required
+     shell:  shutdown -r now 
      async: 1
      poll: 0
      ignore_errors: true
