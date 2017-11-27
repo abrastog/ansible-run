@@ -16,7 +16,7 @@
         state: started
         delay: 30
         timeout: 300
-     - name: check the uptime
-       shell: echo $uptime
+    - name: check the uptime
+      shell: uptime
 
 
