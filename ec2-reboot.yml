@@ -2,12 +2,17 @@
 - hosts: "{{hosts}}"
   become: yes
   tasks:
-   - name: "Reboot if required"
-     shell:  shutdown -r now 
-     async: 1
-     poll: 0
-     ignore_errors: true
+    - name: reboot nodes
+      shell: sleep 2 && shutdown -r now "Ansible reboot"
+      async: 1
+      poll: 0
+      ignore_errors: true
 
-   - name: "Wait for reboot"
-     local_action: wait_for host={{ ansible_default_ipv4.address }} port=22 delay=10 state=started
-     become: false
+    - name: wait for server to come back
+      local_action: wait_for
+      args:
+        host: "{{ hosts }}"
+        port: 22
+        state: started
+        delay: 30
+        timeout: 300
