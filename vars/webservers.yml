@@ -1,4 +1,4 @@
-ec2_keypair: "abhay-vpc.pem"
+ec2_keypair: "abhay-vpc"
 ec2_security_group: "sg-13863566"
 ec2_instance_type: "t2.micro"
 ec2_image: "ami-c998b6b2"
