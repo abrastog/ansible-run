@@ -3,5 +3,5 @@
   tasks:
      - name: create file
        file: path=/tmp/ansiblecheck state=directory 
-     -tasks:
+     - tasks:
        - include: abhay-ping.yml
