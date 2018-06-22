@@ -3,6 +3,7 @@
 
   tasks:
     - name: create tmp folder
+      shell: echo "{{hosts}}"
       shell: "mkdir -p /tmp/{{hosts}}"
       delegate_to: 127.0.0.1
 
