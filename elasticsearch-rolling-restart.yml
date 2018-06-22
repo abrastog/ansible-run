@@ -5,13 +5,13 @@
     - name: create tmp folder
       shell: echo "{{hosts}}"
       shell: "mkdir -p /tmp/{{hosts}}"
-#      delegate_to: 127.0.0.1
-#      delegate_facts: True
-#    - name: check cluster status
-#      shell: curl -s -XGET 'http://{{hosts}}:9200/_cluster/health?pretty=true' > /tmp/{{hosts}}/cluster-state.txt
-#      ignore_errors: yes
-#      delegate_to: 127.0.0.1
-#
+      delegate_to: 127.0.0.1
+      delegate_facts: True
+    - name: check cluster status
+      shell: curl -s -XGET 'http://{{inventory_hostname}}:9200/_cluster/health?pretty=true' > /tmp/{{hosts}}/cluster-state.txt
+      ignore_errors: yes
+      delegate_to: 127.0.0.1
+
 #    - name: check cluster health
 #      shell: "cat /tmp/{{hosts}}/cluster-state.txt |grep status| awk -F : '{print $2}'|tr -d '\",'"
 #      register: pl_es_health
