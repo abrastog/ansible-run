@@ -1,9 +1,7 @@
 ---
 - hosts: "{{hosts}}"
-  ansible_user = jenkins
-  ansible_become = true
+  become: yes
   tasks:
-
     - name: create tmp folder
       shell: echo "{{hosts}}"
       shell: "mkdir -p /tmp/{{hosts}}"
