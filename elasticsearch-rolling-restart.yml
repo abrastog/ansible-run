@@ -1,6 +1,6 @@
 ---
 - hosts: "{{hosts}}"
-  become: yes
+  become_user: jenkins
   tasks:
     - name: create tmp folder
       shell: echo "{{hosts}}"
