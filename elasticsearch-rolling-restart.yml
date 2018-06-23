@@ -1,6 +1,6 @@
 ---
 - hosts: "{{hosts}}"
-  become: yes
+  sudo:    yes
   tasks:
     - name: create tmp folder
       shell: echo "{{hosts}}"
