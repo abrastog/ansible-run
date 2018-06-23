@@ -13,11 +13,11 @@
       ignore_errors: yes
       delegate_to: 127.0.0.1
 
-#    - name: check cluster health
-#      shell: "cat /tmp/{{hosts}}/cluster-state.txt |grep status| awk -F : '{print $2}'|tr -d '\",'"
-#      register: pl_es_health
-#      ignore_errors: yes
-#      delegate_to: 127.0.0.1
+    - name: check cluster health
+      shell: "cat /tmp/{{hosts}}/cluster-state.txt |grep status| awk -F : '{print $2}'|tr -d '\",'"
+      register: pl_es_health
+      ignore_errors: yes
+      delegate_to: 127.0.0.1
 #
 #    - name: if cluster health is not green
 #      fail: msg="{{hosts}} , cluster is not green , we cannot proceed . cluster status => {{pl_es_health.stdout}}"
