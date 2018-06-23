@@ -14,7 +14,7 @@
       delegate_to: 127.0.0.1
 
     - name: check cluster health
-      shell: "cat /tmp/{{hosts}}/cluster-state.txt |grep status| awk -F : '{print $2}'|tr -d '\",'" > abhay.txt
+      shell: "cat /tmp/{{hosts}}/cluster-state.txt |grep status| awk -F : '{print $2}'|tr -d '\",' >  abhay.txt"
       shell: echo abhay.txt
       register: pl_es_health
       ignore_errors: yes
