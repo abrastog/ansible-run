@@ -21,9 +21,9 @@
     - debug:
         msg: "{{ pl_es_health.stdout}}"
 
-#
-#    - name: if cluster health is not green
-#      fail: msg="{{hosts}} , cluster is not green , we cannot proceed . cluster status => {{pl_es_health.stdout}}"
-#      when: pl_es_health.stdout.find('green') == -1
-#      delegate_to: 127.0.0.1
-#
+
+    - name: if cluster health is not green
+      fail: msg="{{hosts}} , cluster is not green , we cannot proceed . cluster status => {{pl_es_health.stdout}}"
+      when: pl_es_health.stdout.find('green') == -1
+      delegate_to: 127.0.0.1
+
