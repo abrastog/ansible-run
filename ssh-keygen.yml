@@ -7,7 +7,7 @@
       shell: "hostname"
       register: pl_name
     - debug:
-      msg: "name : {{pl_name.stdout}}"
+        msg: "name : {{pl_name.stdout}}"
 
     - name: install ip package
       yum: name=net-tools state=present update_cache=yes
