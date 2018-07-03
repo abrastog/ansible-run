@@ -1,0 +1,7 @@
+[hosts]
+
+[python]
+192.168.33.13
+
+[jenkins-slave]
+192.168.33.14
