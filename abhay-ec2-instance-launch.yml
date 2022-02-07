@@ -2,7 +2,7 @@
  - hosts: localhost
    connection: local
    gather_facts: false
-   user: test
+   user: admin
    pre_tasks:
     - include_vars: vars/webservers.yml
    roles:
