@@ -19,7 +19,7 @@
 
 
 - name: reload systemctl daemon
-  shell: "systemctl daemon-reload"
+  shell: 'systemctl daemon-reload'
 
 - name: enable elastic serach on boot
   shell: "chkconfig elasticsearch on"
